@@ -1,0 +1,144 @@
+OESTE=(-1,0)
+ESTE=(1,0)
+NORTE=(0,-1)
+SUR=(0,1)
+def crear_grilla(desc):
+    grilla=[]
+    for i in desc:
+        lista_cadenas=[]
+        lista_cadenas=list(i)
+        grilla.append(lista_cadenas)
+    return grilla
+
+def dimensiones(grilla):
+    '''Devuelve una tupla con la cantidad de columnas y filas de la grilla.'''
+    filas=len(grilla)
+    columnas=len(grilla[0])
+    dimension=(columnas,filas)
+    return dimension
+
+def hay_pared(grilla, c, f):
+    '''Devuelve True si hay una pared en la columna y fila (c, f).'''
+    if grilla[f][c]=="#":
+        pared=True
+    else:
+        pared=False
+    return pared
+
+
+def hay_objetivo(grilla, c, f):
+    '''Devuelve True si hay un objetivo en la columna y fila (c, f).'''
+    if grilla[f][c]==".":
+        objetivo=True
+    else:
+        objetivo=False
+    
+    return objetivo
+
+def hay_caja(grilla, c, f):
+    '''Devuelve True si hay una caja en la columna y fila (c, f).'''
+    if grilla[f][c]=="$":
+        caja=True
+    else:
+        caja=False
+    return caja
+
+def hay_jugador(grilla, c, f):
+    '''Devuelve True si el jugador está en la columna y fila (c, f).'''
+    if grilla[f][c]=="@":
+        jugador=True
+    else:
+        jugador=False
+    return jugador
+
+def juego_ganado(grilla):
+    '''Devuelve True si el juego está ganado.'''
+
+def mover(grilla, direccion):
+    '''Mueve el jugador en la dirección indicada.'''
+    
+    nueva_grilla=list(map(list,grilla))
+    grilla1=([
+        '#####',
+        '#   #',
+        '#@  #',
+        '#####',])
+    grilla2=([
+        '#####',
+        '#   #',
+        '# @ #',
+        '#####',])
+    grilla3=([
+        '#####',
+        '#   #',
+        '#  @#',
+        '#####',])
+    grilla4=([
+        '#####',
+        '#@  #',
+        '#   #',
+        '#####',])
+    grilla5=([
+        '#####',
+        '# @ #',
+        '#   #',
+        '#####',])
+    grilla6=([
+        '#####',
+        '#  @#',
+        '#   #',
+        '#####',])
+    
+
+    
+    return nueva_grilla
+    ''' La dirección es una tupla con el movimiento horizontal y vertical. Dado que
+    no se permite el movimiento diagonal, la dirección puede ser una de cuatro
+    posibilidades:
+
+    direccion  significado
+    ---------  -----------
+    (-1, 0)    Oeste
+    (1, 0)     Este
+    (0, -1)    Norte
+    (0, 1)     Sur
+
+    La función debe devolver una grilla representando el estado siguiente al
+    movimiento efectuado. La grilla recibida NO se modifica; es decir, en caso
+    de que el movimiento sea válido, la función devuelve una nueva grilla.
+    '''
+#--------------------
+def contar_objetivos():
+    pass
+def hay_objetivo_mas_caja(grilla, c, f):
+    #MEJORAR
+    '''Devuelve True si el objetivo+caja está en la columna y fila (c, f).'''
+    if grilla[f][c]=="*":
+        objetivo_mas_caja=True
+    else:
+        objetivo_mas_caja=False
+    return objetivo_mas_caja
+
+def hay_objetivo_mas_jugador(grilla, c, f):
+    #MEJORAR
+    '''Devuelve True si el objetivo+jugador está en la columna y fila (c, f).'''
+    if grilla[f][c]=="+":
+        objetivo_mas_jugador=True
+    else:
+        objetivo_mas_jugador=False
+    return objetivo_mas_jugador
+
+def main():
+    crear_grilla([
+    '#####',
+    '#.$ #',
+    '#@  #',
+    '#####',])
+    print(mover(crear_grilla([
+    '#####',
+    '#.$ #',
+    '#@  #',
+    '#####',]), ESTE))
+    dimensiones(crear_grilla(['#####','#.$ #','#@  #','#####',]))
+
+main()
